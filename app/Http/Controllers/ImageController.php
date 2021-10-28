@@ -8,7 +8,8 @@ use App\Models\Image;
 class ImageController extends Controller
 {
     public function uoload(){
-        return view("upload");
+        $imgs = Image::all();
+        return view("upload",["imgs"=>$imgs]);
     }
     public function save_image(Request $request){
         if($request->hasFile('img_src')){

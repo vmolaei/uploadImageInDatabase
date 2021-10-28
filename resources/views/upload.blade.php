@@ -10,6 +10,13 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery.min.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        #img{
+            width: 300px;
+            height:300px;
+
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -39,6 +46,15 @@
         </table>
 
     </form>
+    <hr>
+
+    <h3 class="my-3">Uploded images</h3>
+    @foreach ($imgs as $img)
+        <p class="my-4">
+            <img id="img" src="{{asset('imgs/'.$img->img_src)}}" alt="{{$img->img_alt}}"/>
+        </p>
+    @endforeach
+
 </div>
 </body>
 </html>
